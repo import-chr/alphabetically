@@ -1,0 +1,56 @@
+body, #inpt {
+  background-color: rgb(255, 255, 255);
+}
+
+/* Inicio del style para el form e input*/
+#pForm {
+  height: 100px;
+  margin-top: 15%;
+  border-bottom: 5px solid rgba(167, 22, 115, 0.7);
+}
+
+#inpt {
+  height: 90px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  border: 0;
+  font-size: 4em;
+  font-family: 'Trebuchet MS';
+}
+
+#pForm, #inpt {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#inpt::placeholder {
+  color: rgb(157, 163, 163);
+  font-style: italic;
+}
+
+#inpt:focus {
+  outline: 0;
+}
+/* Fin del style para el form e input*/
+
+/*Inicio del style para div
+#divR {
+}
+
+.butt-copy {
+}
+
+#divLe {
+}
+Fin del style para div*/
+
+/*Inicio del style para p creada por js*/
+p {
+  text-align: center;
+  font-size: 2em;
+  font-family: 'Trebuchet MS';
+}
+/*Fin del style para p creada por js*/
