@@ -19,12 +19,21 @@ const hazArr = (palabras) => {
 const arrPalabras = hazArr(pPrueba);
 //console.log(hazArr(pPrueba));
 
-let letra, letraAlfa, pabsLetra = 0;
+let letra = 0, letraAlfa = 0, pabsLetra = 0;
 
-//verifica cada palabra en arrPalabras
-arrPalabras.forEach(pab => {
-  if(pab[letra] == alfa[letraAlfa]) {
-    //aumentar la letra
-    //mientras tenga letras va a seguir aumentando letra
-  }
-});
+//verifica cada letras de una palabra con el alfabeto
+function verif(arr) {
+  let pabsRe = [];
+
+  arr.forEach(pabs => {
+    if(pabs[letra] == alfa[letraAlfa]) {
+      pabsRe.push(pabs);
+    }
+  });
+  
+  return pabsRe;
+  //console.log(pabsRe);
+}
+
+const verifArr = verif(arrPalabras);
+console.log(verifArr);
