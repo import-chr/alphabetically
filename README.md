@@ -6,11 +6,10 @@ ___
 | Archivo existente | Lenguaje | Extensión | Completado |
 |-- | -- | -- | -- |
 | :large_blue_circle: | javascript | .js | :x:
-| :white_circle: | c++ | .cpp |  |
-| :white_circle: | c# | .cs |  |
-| :white_circle: | java | .java |  |
-| :white_circle: | python | .py |  |
-| :white_circle: | ruby | .rb |  |
+| :large_blue_circle: | c++ | .cpp | :x: |
+| :large_blue_circle: | java | .java | :x: |
+| :large_blue_circle: | python | .py | :x: |
+| :large_blue_circle: | ruby | .rb | :x: |
 ___
 
 [comment]: <> (:white_check_mark:)
