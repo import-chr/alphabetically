@@ -15,6 +15,12 @@ const hazArr = (palabras) => {
   return arrCreado;
 };
 
+const borraItem = (arR, item) => {
+  let i = arR.indexOf(item);
+
+  i !== -1 && arR.splice(i, 1);
+};
+
 //array devuelto con la variable hazArr
 const arrPalabras = hazArr(pPrueba);
 //console.log(hazArr(pPrueba));
@@ -28,6 +34,7 @@ function verif(arr) {
   arr.forEach(pabs => {
     if(pabs[letra] == alfa[letraAlfa]) {
       pabsRe.push(pabs);
+      borraItem(arr, pabs);
     }
   });
   
@@ -36,4 +43,6 @@ function verif(arr) {
 }
 
 const verifArr = verif(arrPalabras);
-console.log(verifArr);
+// console.log(verifArr);
+// console.log(arrPalabras);
+
