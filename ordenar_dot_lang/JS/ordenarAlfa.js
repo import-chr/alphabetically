@@ -7,7 +7,7 @@ const alfa = [
 ];
 
 //puede editar este string
-const pPrueba = "hola ordename de manera alfebatica teniendo varias coincidencias alteradas";
+const pPrueba = "hola ordename de manera alfebatica teniendo varias coincidencias alteradas para probar el algoritmo";
 
 const hazArr = (palabras) => {
   let arrCreado = palabras.split(" ");
@@ -23,26 +23,33 @@ const borraItem = (arR, item) => {
 
 //array devuelto con la variable hazArr
 const arrPalabras = hazArr(pPrueba);
-//console.log(hazArr(pPrueba));
+//console.log(arrPalabras);
 
 let letra = 0, letraAlfa = 0, pabsLetra = 0;
 
-//verifica cada letras de una palabra con el alfabeto
-function verif(arr) {
-  let pabsRe = [];
+let pabsRe = [];
 
+//verifica letra y añade palabra a pabsRe
+function verif(arr) {
   arr.forEach(pabs => {
     if(pabs[letra] == alfa[letraAlfa]) {
       pabsRe.push(pabs);
       borraItem(arr, pabs);
     }
   });
+
+  if(!arr.includes([][letra] == alfa[letraAlfa])) {
+    letraAlfa++;
+  }
+
+  while(arr.length > 0) {
+    verif(arr);
+  }
   
   return pabsRe;
-  //console.log(pabsRe);
 }
 
 const verifArr = verif(arrPalabras);
-// console.log(verifArr);
-// console.log(arrPalabras);
-
+console.log(letraAlfa);
+console.log(verifArr);
+console.log(arrPalabras);
