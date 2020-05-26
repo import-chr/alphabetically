@@ -31,12 +31,15 @@ let pabsRe = [];
 
 //verifica letra y añade palabra a pabsRe
 function verif(arr) {
-  arr.forEach(pabs => {
+  for(let i = 0; i < arr.length; i++) {
+    const pabs = arr[i]
+
     if(pabs[letra] == alfa[letraAlfa]) {
       pabsRe.push(pabs);
       borraItem(arr, pabs);
+      i--;
     }
-  });
+  }
 
   if(!arr.includes([][letra] == alfa[letraAlfa])) {
     letraAlfa++;
