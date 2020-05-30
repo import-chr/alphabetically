@@ -8,12 +8,38 @@ alfab = (
 
 p_ordenadas = ""
 
-p_prueba = "hola ordename de manera alfebatica teniendo varias coincidencias alteradas para probar el algoritmo"
+p_prueba = "hola ordename de manera alfebatica teniendo varias coincidencias alteradas para probar el algoritmo bueno"
 arr_palabras = p_prueba.split()
 arr_const = p_prueba.split()
 #print(arrPalabras)
 
-#cambia el index de los elementos
+# cuenta la cantidad de palabras con 1 letra
+def cuenta_palabras_con(array, letra_):
+	contador = 0
+
+	for i in array:
+		if i[0] == letra_:
+			contador += 1
+	
+	return contador
+
+# cuenta cuantas palabras con todas las letras del abc
+def palabras_con(lista):
+	lista_p_ = []
+
+	for letra in alfab:
+		p_con_ = cuenta_palabras_con(lista, letra)
+		if p_con_ != 0:
+			lista_p_.append(p_con_)
+		else:
+			lista_p_.append(0)
+
+	return lista_p_
+
+n_p = palabras_con(arr_const)
+print(n_p)
+
+# cambia el index de los elementos
 def cambiaIndex(arreglo, v_pos, n_pos):
 	arreglo[n_pos], arreglo[v_pos] = arreglo[v_pos], arreglo[n_pos]
 
@@ -43,44 +69,29 @@ def comp_arrays(array0, array1):
 
 #ordena el arreglo
 def ordena(arr):
-	# variables para iterar en arr y en sus index
 	letra_alfa = 0
 	pos_letra = 0
-	pabs = 0
-	len_arr = len(arr)
-	# print(len_arr)
-
+	llama_palabras_con = palabras_con(arr)
+	# variables para iterar en arr y en sus index
 
 	# cambia las palabras de arr si empiezan con letra_alfa
 	for palabra in arr:
-		llama_obtener_index = obtener_index(arr, palabra)
 		llama_comp_arrays = comp_arrays(arr_const, arr_palabras)
+		llama_obtener_index = obtener_index(arr, palabra)
 
 		if palabra[pos_letra] == alfab[letra_alfa]:
 			cambiaIndex(arr, llama_obtener_index, llama_comp_arrays)
+			print(alfab[letra_alfa])
+
+			if arr[llama_palabras_con[0] - 1][0] == alfab[letra_alfa]:
+				letra_alfa += 1
+			
+			if arr[llama_palabras_con[0] + llama_palabras_con[1] - 1][0] == alfab[letra_alfa]:
+				letra_alfa += 1
 			# print("ok")
 		else:
 			pass
-            # print("no")
-
-		# letra_alfa no aumentó
-		if letra_alfa == 0:
-			print("letra_alfa no aumentó aquí, por lo que no busca la siguiente letra")
-
-	# aumenta letra_alfa si ya cambió todas las palabras que inician con letra_alfa
-	for i in range(len_arr):
-		if arr[pabs][0] == alfab[letra_alfa]:
-			pabs += 1
-			# print(pabs)
-		else:
-			letra_alfa += 1
-			# print(variable_aumentar)
-
-	# auxiliar, me dice si letra_alfa aumenta correctamente
-	if letra_alfa == 0:
-		print("el valor de letra_alfa es: " + str(letra_alfa) + " pero, no va a buscar demás letras")
-	else:
-		print("el valor de letra_alfa es: " + str(letra_alfa) + ", va a buscar demás letras")
+			# print("no")
 
 	return " ".join(arr)
 
